@@ -3,6 +3,49 @@
 //////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////
+// The Coupon Code
+
+// Your online store likes to give out coupons for special occasions. Some customers try to cheat the system by entering invalid codes or using expired coupons.
+// Write a function called checkCoupon to verify that a coupon is valid and not expired. If the coupon is good, return true. Otherwise, return false.
+// A coupon expires at the END of the expiration date. All dates will be passed in as strings in this format: "June 15, 2014"
+
+function checkCoupon (enteredCode, correctCode, currentDate, expirationDate) {
+  var curDate = new Date(currentDate);
+  var expDate = new Date(expirationDate);
+
+  if (enteredCode === correctCode && curDate <= expDate) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Other peoples code...
+function checkCoupon (enteredCode, correctCode, currentDate, expirationDate){
+  return enteredCode === correctCode && Date.parse(expirationDate) >= Date.parse(currentDate)
+}
+
+//////////////////////////////////////////////////////////////////
+// Make a function that does arithmetic!
+
+// Given two numbers and an arithmetic operator (the name of it, as a string), return the result of the two numbers having that operator used on them.
+// a and b will both be positive integers, and a will always be the first number in the operation, and b always the second.
+// The four operators are "add", "subtract", "divide", "multiply".
+
+function arithmetic(a, b, operator){
+  switch (operator) {
+    case "add":
+        return a + b;
+    case "subtract":
+        return a - b;
+    case "multiply":
+        return a * b;
+    case "divide":
+        return a / b;
+  }
+}
+
+//////////////////////////////////////////////////////////////////
 // Square Every Digit
 
 // You are asked to square every digit of a number.
@@ -167,6 +210,29 @@ function positiveSum(arr) {
 }
 
 //////////////////////////////////////////////////////////////////
+// Return Negative
+
+// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+
+function makeNegative(num) {
+  if(num < 0) {
+    return num;
+  } else {
+    return num * -1;
+  }
+}
+
+// Refactored with ternary operator
+function makeNegative(num) {
+  return num < 0 ? num : num * -1;
+}
+
+// Other persons code
+function makeNegative(num) {
+  return -Math.abs(num);
+}
+
+//////////////////////////////////////////////////////////////////
 // Keep up the hoop
 
 // Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
@@ -195,27 +261,4 @@ function litres(time) {
 
 function solution(str){
   return str.split('').reverse().join('');
-}
-
-//////////////////////////////////////////////////////////////////
-// Return Negative
-
-// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
-
-function makeNegative(num) {
-  if(num < 0) {
-    return num;
-  } else {
-    return num * -1;
-  }
-}
-
-// Refactored with ternary operator
-function makeNegative(num) {
-  return num < 0 ? num : num * -1;
-}
-
-// Other persons code
-function makeNegative(num) {
-  return -Math.abs(num);
 }
