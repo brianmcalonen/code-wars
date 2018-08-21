@@ -2,6 +2,73 @@
 // CODE WARS //
 //////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////
+// Find the capitals
+
+// Write a function that takes a single string (word) as argument.
+// The function must return an ordered list containing the indexes of all capital letters in the string.
+
+var capitals = function (word) {
+	// split word into array
+  // find which elements are capitals
+  // return their indexs
+
+  var wordArray = word.split('');
+  var indexArray = [];
+
+  for (var i = 0; i < wordArray.length; i++) {
+    if (wordArray[i] === wordArray[i].toUpperCase()) {
+      indexArray.push(wordArray.indexOf(wordArray[i]));
+    }
+  }
+  return indexArray;
+};
+
+//////////////////////////////////////////////////////////////////
+// Predict your age!
+
+// My grandfather always predicted how old people would get, and right before he passed away he revealed his secret!
+// In honor of my grandfather's memory we will write a function using his formula!
+// Take a list of ages when each of your great-grandparent died.
+// Multiply each number by itself.
+// Add them all together.
+// Take the square root of the result.
+// Divide by two.
+// predictAge(65, 60, 75, 55, 60, 63, 64, 45) === 86
+// Note: the result should be rounded down to the nearest integer.
+
+function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
+  var totalAges = ((age1 * age1) + (age2 * age2) +
+  (age3 * age3) + (age4 * age4) + (age5 * age5) +
+  (age6 * age6) + (age7 * age7) + (age8 * age8));
+
+  return(Math.floor(Math.sqrt(totalAges)/2));
+}
+
+// Someone else's solution...
+const predictAge = (...ages) => Math.hypot(...ages) / 2 | 0;
+
+//////////////////////////////////////////////////////////////////
+// Get the Middle Character
+
+// You are going to be given a word. Your job is to return the middle character of the word.
+// If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+function getMiddle(s) {
+  var sString = s.split('');
+  var sLength = sString.length;
+
+  if (sLength % 2 === 0) {
+    return (sString[sLength / 2 - 1] + sString[sLength / 2 ]);
+  } else {
+    return(sString[Math.floor(sLength / 2)]);
+  }
+}
+
+// Other peoples code...
+function getMiddle(s) {
+  return s.slice((s.length-1)/2, s.length/2+1);
+}
 
 //////////////////////////////////////////////////////////////////
 // The Coupon Code
