@@ -3,6 +3,100 @@
 //////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////
+// List Filtering
+
+// Create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+function filter_list(l) {
+  return l.filter(l => (typeof l === "number"));
+}
+
+//////////////////////////////////////////////////////////////////
+// We Haven Liftoff!
+
+// You have an array of numbers 1 through n (where 1 <= n <= 10). The array needs to be formatted correctly for the person reading the countdown of a spaceship launch.
+// Unfortunately, the person reading the countdown only knows how to read strings. After the array is sorted correctly make sure it's in a format he can understand.
+// Between each number should be a space and after the final number (n) should be the word 'liftoff!'
+//  Given instructions = [8,1,10,2,7,9,6,3,4,5]
+//  Should return "10 9 8 7 6 5 4 3 2 1 liftoff!"
+// Given instructions = [1,2,4,3,5]
+// Should return "5 4 3 2 1 liftoff!"
+
+function liftoff(instructions){
+  var nums = instructions.sort(function(a,b) {return b - a});
+  var count = [];
+  for (var i = 0; i < nums.length; i++) {
+    count.push(nums[i].toString());
+  }
+  return count.join(' ') + " liftoff!";
+}
+
+// Much simpler solution...
+function liftoff(instructions){
+  return instructions.sort(function(a, b) {return b - a;}).join(' ') + ' liftoff!'
+}
+
+//////////////////////////////////////////////////////////////////
+// Summing a Number's digits
+
+// Write a function named sumDigits which takes a number as input.
+// Return the sum of the absolute value of each of the number's decimal digits.
+// sumDigits(10);  // Returns 1
+// sumDigits(99);  // Returns 18
+// sumDigits(-32); // Returns 5
+
+function sumDigits(number) {
+
+  var numString = number.toString().split('');
+  var total = 0;
+
+  for(var i = 0; i < numString.length; i++) {
+    (numString[i] === '-') ? total = 0 : (total += parseInt(numString[i]));
+  }
+
+  return total;
+}
+
+//////////////////////////////////////////////////////////////////
+// Complementary DNA
+
+// In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G".
+// You have function with one side of the DNA string, you need to get the other complementary side.
+// DNA strand is never empty or there is no DNA at all.
+// DNAStrand ("ATTGC") # return "TAACG"
+// DNAStrand ("GTAT") # return "CATA"
+
+function DNAStrand(dna){
+  var dnaArray = dna.split("");
+  var complement = [];
+
+  for (var i = 0; i < dna.length; i++) {
+    if(dnaArray[i] === "A") {
+      complement.push("T");
+    } else if(dnaArray[i] === "T") {
+      complement.push("A");
+    } else if(dnaArray[i] === "G") {
+      complement.push("C");
+    } else {
+      complement.push("G");
+    }
+  }
+
+// Other people's solution...
+function DNAStrand(dna) {
+  return dna.replace(/./g, function(c) {
+    return DNAStrand.pairs[c]
+  })
+}
+
+DNAStrand.pairs = {
+  A: 'T',
+  T: 'A',
+  C: 'G',
+  G: 'C',
+}
+
+//////////////////////////////////////////////////////////////////
 // Find the capitals
 
 // Write a function that takes a single string (word) as argument.
