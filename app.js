@@ -2,6 +2,62 @@
 // CODE WARS //
 //////////////////////////////////////////////////////////////////
 
+// ////////////////////////////////////////////////////////////////
+// Product of ?s and !s
+
+// Count the number of exclamation marks and question marks, return the product.
+
+function product(s){
+  var ss = s.split('');
+  var e = 0;
+  var q = 0;
+
+  for(var i = 0; i < ss.length; i++) {
+    if(ss[i] == "!") {e++}
+    if(ss[i] == "?") {q++}
+  }
+  return e * q;
+}
+// ////////////////////////////////////////////////////////////////
+// Bumps in the Road
+
+// Given a string showing either flat road ("_") or bumps ("n"), work out if you make it home safely.
+// 15 bumps or under, return "Woohoo!", over 15 bumps return "Car Dead".
+
+function bump(x){
+  var newString = x.split('');
+  var counter = 0;
+
+  newString.forEach(elem => {
+    (elem == "n") ? counter++ : counter += 0;
+  })
+
+  return (counter <= 15) ? "Woohoo!" : "Car Dead";
+}
+
+// Other people's solution.....
+const bump=x=>x.split('n').length>16?"Car Dead":"Woohoo!"
+
+//////////////////////////////////////////////////////////////////
+// Index of the Middle Element
+
+// Create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+// The input to the function will be an array of three distinct numbers.
+// For example: gimme([2, 3, 1]) => 0
+
+var gimme = function (inputArray) {
+
+  var copy = [...inputArray]
+  var sorted =inputArray.sort(function(a, b) {return a - b});
+  var middleNum = sorted[1];
+  return copy.indexOf(middleNum);
+};
+
+// Other people's solution.....
+var gimme = function (inputArray) {
+  return inputArray.indexOf(inputArray.slice(0).sort(function(a,b) { return a-b; })[1]);
+};
+
 //////////////////////////////////////////////////////////////////
 // List Filtering
 
