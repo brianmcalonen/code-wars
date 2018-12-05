@@ -3,37 +3,84 @@
 //////////////////////////////////////////////////////////////////
 
 // ////////////////////////////////////////////////////////////////
-// Caesar Cipher
+// Reverse Words in a String
 
-function caesarCipher(str, num) {
-  var lowerString = str.toLowerCase();
-  var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-  var newString = "";
+function reverseWords(string) {
+  var wordsArr = string.split(" ");
+  var reversedWordsArr = [];
 
-  for (var i = 0; i < lowerString.length; i++) {
-    var currentLetter = lowerString[i];
-
-    if (currentLetter === " ") {
-      newString += current;
-      continue;
+  wordsArr.forEach(word => {
+    var reversedWord = "";
+    for (var i = word.length - 1; i >= 0; i--) {
+      reversedWord += word[i];
     }
+    reversedWordsArr.push(reversedWord);
+  });
 
-    var currentIndex = alphabet.indexOf(currentLetter);
-    var newIndex = currentIndex + num;
-
-    if (newIndex > 26) {
-      newIndex -= 26;
-    }
-    if (newIndex < 0) {
-      newIndex += 26;
-    }
-
-    newString += alphabet[newIndex];
-    console.log(newString);
-  }
+  console.log(reversedWordsArr.join(" "));
 }
 
-caesarCipher("hello", 3);
+reverseWords("who let the dogs out?");
+
+// function reverseWords(str) {
+//   // split the string into words
+//   var wordsArray = str.split(" ");
+
+//   // new array
+//   var newArray = [];
+
+//   // new string
+//   var newString = "";
+
+//   // loop through each word and split them into new arrays
+//   for (var i = 0; i < wordsArray.length; i++) {
+//     // split each word push to new array
+//     newArray.push(wordsArray[i].split("").reverse());
+//   }
+
+//   // join newArray to make newString
+//   for (var j = 0; j < newArray.length; j++) {
+//     // join arrays into words
+//     // add to newString
+//     newString += newArray[j].join("") + " ";
+//   }
+//   console.log(newString);
+// }
+
+// reverseWords("howdy ho neighborino");
+
+// ////////////////////////////////////////////////////////////////
+// Caesar Cipher
+
+// function caesarCipher(str, num) {
+//   var lowerString = str.toLowerCase();
+//   var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+//   var newString = "";
+
+//   for (var i = 0; i < lowerString.length; i++) {
+//     var currentLetter = lowerString[i];
+
+//     if (currentLetter === " ") {
+//       newString += current;
+//       continue;
+//     }
+
+//     var currentIndex = alphabet.indexOf(currentLetter);
+//     var newIndex = currentIndex + num;
+
+//     if (newIndex > 26) {
+//       newIndex -= 26;
+//     }
+//     if (newIndex < 0) {
+//       newIndex += 26;
+//     }
+
+//     newString += alphabet[newIndex];
+//     console.log(newString);
+//   }
+// }
+
+// caesarCipher("hello", 3);
 
 // ////////////////////////////////////////////////////////////////
 // Product of ?s and !s
