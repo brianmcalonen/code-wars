@@ -1,6 +1,32 @@
 //////////////////////////////////////////////////////////////////
 // CODE WARS //
 //////////////////////////////////////////////////////////////////
+// Reverse Array in Place
+
+// Be sure to manipulate the array passed in
+// Do NOT push elements into a new array & return it
+// Do NOT use array.reverse() method
+
+function reverseArrayInPlace(arr) {
+  // for loop to iterate through array
+  // only loop through the first half of the array...
+  // otherwise it will return the original array
+  for (var i = 0; i < arr.length / 2; i++) {
+    // set a temporary variable to store the [i]th element
+    var tempVar = arr[i];
+
+    // switch the first element with the last,
+    // switch second element with the second to last, etc...
+    arr[i] = arr[arr.length - 1 - i];
+
+    // set the counterpart equal to the current element
+    arr[arr.length - 1 - i] = tempVar;
+  }
+
+  return arr;
+}
+
+reverseArrayInPlace([1, 2, 3, 4, 5, 6, 7, 8]);
 
 // ////////////////////////////////////////////////////////////////
 // Reverse Words in a String
