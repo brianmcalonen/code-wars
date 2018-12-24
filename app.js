@@ -1,52 +1,105 @@
 //////////////////////////////////////////////////////////////////
 // CODE WARS //
 //////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
+// Mean, Median, Mode
+
+// function getAll(array) {
+//   // call other three functions
+//   // return object which has mean, median, mode included
+//   console.log({
+//     mean: getMean(array),
+//     median: getMedian(array),
+//     mode: getMode(array)
+//   })
+// }
+
+// function getMean(array) {
+//   var counter = 0;
+
+//   for (var i = 0; i < array.length; i++) {
+//     counter += array[i]
+//   }
+
+//   return (Math.floor(counter / array.length))
+// }
+
+// function getMedian(array) {
+//   var sortedArray = array.sort(function (a, b) { return a - b });
+
+//   var middleIndex = Math.floor((array.length + 1) / 2);
+
+//   return (array[middleIndex])
+// }
+
+// function getMode(array) {
+//   var mode = {};
+//   var max = 0;
+//   var count = 0;
+
+//   array.forEach(function (x) {
+//     if (mode[x]) { mode[x]++; }
+//     else { mode[x] = 1; }
+
+//     if (count < mode[x]) {
+//       max = x;
+//       count = mode[x];
+//     }
+//   });
+
+//   return max;
+// }
+
+// getAll([12, 32, 43, 51, 26, 37, 84, 29])
+
+//////////////////////////////////////////////////////////////////
 // Reverse Array in Place
 
 // Be sure to manipulate the array passed in
 // Do NOT push elements into a new array & return it
 // Do NOT use array.reverse() method
 
-function reverseArrayInPlace(arr) {
-  // for loop to iterate through array
-  // only loop through the first half of the array...
-  // otherwise it will return the original array
-  for (var i = 0; i < arr.length / 2; i++) {
-    // set a temporary variable to store the [i]th element
-    var tempVar = arr[i];
+// function reverseArrayInPlace(arr) {
+//   // for loop to iterate through array
+//   // only loop through the first half of the array...
+//   // otherwise it will return the original array
+//   for (var i = 0; i < arr.length / 2; i++) {
+//     // set a temporary variable to store the [i]th element
+//     var tempVar = arr[i];
 
-    // switch the first element with the last,
-    // switch second element with the second to last, etc...
-    arr[i] = arr[arr.length - 1 - i];
+//     // switch the first element with the last,
+//     // switch second element with the second to last, etc...
+//     arr[i] = arr[arr.length - 1 - i];
 
-    // set the counterpart equal to the current element
-    arr[arr.length - 1 - i] = tempVar;
-  }
+//     // set the counterpart equal to the current element
+//     arr[arr.length - 1 - i] = tempVar;
+//   }
 
-  return arr;
-}
+//   return arr;
+// }
 
-reverseArrayInPlace([1, 2, 3, 4, 5, 6, 7, 8]);
+// reverseArrayInPlace([1, 2, 3, 4, 5, 6, 7, 8]);
 
 // ////////////////////////////////////////////////////////////////
 // Reverse Words in a String
 
-function reverseWords(string) {
-  var wordsArr = string.split(" ");
-  var reversedWordsArr = [];
+// function reverseWords(string) {
+//   var wordsArr = string.split(" ");
+//   var reversedWordsArr = [];
 
-  wordsArr.forEach(word => {
-    var reversedWord = "";
-    for (var i = word.length - 1; i >= 0; i--) {
-      reversedWord += word[i];
-    }
-    reversedWordsArr.push(reversedWord);
-  });
+//   wordsArr.forEach(word => {
+//     var reversedWord = "";
+//     for (var i = word.length - 1; i >= 0; i--) {
+//       reversedWord += word[i];
+//     }
+//     reversedWordsArr.push(reversedWord);
+//   });
 
-  console.log(reversedWordsArr.join(" "));
-}
+//   console.log(reversedWordsArr.join(" "));
+// }
 
-reverseWords("who let the dogs out?");
+// reverseWords("who let the dogs out?");
 
 // function reverseWords(str) {
 //   // split the string into words
