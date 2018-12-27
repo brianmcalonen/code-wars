@@ -3,6 +3,46 @@
 //////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////
+// Binary Search
+
+function binarySearch(numArray, key) {
+  // find the middle of the array
+
+}
+
+//////////////////////////////////////////////////////////////////
+// Two Sum
+
+function twoSum(numArray, sum) {
+  // return every pair of numbers from numArray that adds up to sum
+  // return an array of arrays
+  // may reuse numbers from numArray
+
+  // define array to put pairs into
+  var sumArray = [];
+  // push every number we interate through into hashtable
+  var hash = [];
+
+  // loop through all numbers in numArray
+  for (var i = 0; i < numArray.length; i++) {
+    // define the current number in the array
+    var currentNumber = numArray[i];
+    // define counterpart as diff between sum and current #
+    var counterpart = sum - currentNumber;
+    // if counterpart exists in the hashtable...
+    // push the array of pairs into sumArray
+    if (hash.indexOf(counterpart) !== -1) {
+      sumArray.push([currentNumber, counterpart])
+    }
+    // push the currentNumber into hashtable no matter what
+    hash.push(currentNumber)
+  }
+  console.log(sumArray)
+}
+
+twoSum([40, 11, 19, 17, -12], 28)
+
+//////////////////////////////////////////////////////////////////
 // Mean, Median, Mode
 
 // function getAll(array) {
