@@ -3,44 +3,68 @@
 //////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////
+// Fibonacci
+
+function fibonacci(position) {
+
+  if (position < 3) {
+    return 1
+  } else {
+    return (fibonacci(position - 1) + fibonacci(position - 2))
+  }
+}
+
+console.log(fibonacci(20))
+//////////////////////////////////////////////////////////////////
 // Binary Search
 
-function binarySearch(numArray, key) {
-  // find the middle of the array
+// function binarySearch(numArray, key) {
+//   var middleIdx = Math.floor(numArray.length / 2);
+//   var middleElem = numArray[middleIdx];
 
-}
+//   if (middleElem === key) return true;
+//   else if (middleElem < key && numArray.length > 1) {
+//     return binarySearch(numArray.splice(middleIdx, numArray.length), key);
+//   }
+//   else if (middleElem > key && numArray.length > 1) {
+//     return binarySearch(numArray.splice(0, middleIdx), key);
+//   }
+//   else return false;
+// }
+
+// binarySearch([5, 7, 12, 16, 36, 39, 42, 56, 71], 56);
 
 //////////////////////////////////////////////////////////////////
 // Two Sum
 
-function twoSum(numArray, sum) {
-  // return every pair of numbers from numArray that adds up to sum
-  // return an array of arrays
-  // may reuse numbers from numArray
+// function twoSum(numArray, sum) {
+//   // return every pair of numbers from numArray that adds up to sum
+//   // return an array of arrays
+//   // may reuse numbers from numArray
 
-  // define array to put pairs into
-  var sumArray = [];
-  // push every number we interate through into hashtable
-  var hash = [];
+//   // define array to put pairs into
+//   var sumArray = [];
+//   // push every number we interate through into hashtable
+//   var hash = [];
 
-  // loop through all numbers in numArray
-  for (var i = 0; i < numArray.length; i++) {
-    // define the current number in the array
-    var currentNumber = numArray[i];
-    // define counterpart as diff between sum and current #
-    var counterpart = sum - currentNumber;
-    // if counterpart exists in the hashtable...
-    // push the array of pairs into sumArray
-    if (hash.indexOf(counterpart) !== -1) {
-      sumArray.push([currentNumber, counterpart])
-    }
-    // push the currentNumber into hashtable no matter what
-    hash.push(currentNumber)
-  }
-  console.log(sumArray)
-}
+//   // loop through all numbers in numArray
+//   for (var i = 0; i < numArray.length; i++) {
+//     // define the current number in the array
+//     var currentNumber = numArray[i];
+//     // define counterpart as diff between sum and current #
+//     var counterpart = sum - currentNumber;
+//     // if counterpart exists in the hashtable...
+//     // push the array of pairs into sumArray
+//     if (hash.indexOf(counterpart) !== -1) {
+//       sumArray.push([currentNumber, counterpart])
+//     }
+//     // push the currentNumber into hashtable no matter what
+//     hash.push(currentNumber)
+//   }
+//   console.log(sumArray)
+// }
 
-twoSum([40, 11, 19, 17, -12], 28)
+// twoSum([40, 11, 19, 17, -12], 28)
 
 //////////////////////////////////////////////////////////////////
 // Mean, Median, Mode
