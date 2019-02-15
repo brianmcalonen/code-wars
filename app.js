@@ -3,24 +3,42 @@
 //////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////
+// Sum of Two
+// Write a function that takes an array of numbers and a target 
+// number. It should find two different items in the array that, 
+// when added together, give the target value. The indices of these 
+// items should then be returned in an array like so: [index1, index2].
+
+// function twoSum(numbers, target) {
+//   for (var i = 0; i < numbers.length; i++) {
+//     for (var j = 0; j < numbers.length; j++) {
+//       if (i !== j && numbers[i] + numbers[j] === target) {
+//         return [i, j]
+//       }
+//     }
+//   }
+//   return [];
+// }
+
+//////////////////////////////////////////////////////////////////
 // Memoized Fibonacci
 
-function fibMemo(index, cache) {
-  // cache equals cache that was passed in or empty array
-  cache = cache || [];
+// function fibMemo(index, cache) {
+//   // cache equals cache that was passed in or empty array
+//   cache = cache || [];
 
-  if (cache[index]) return cache[index];
-  else {
-    if (index < 3) return 1;
-    else {
-      cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache)
-    }
-  }
+//   if (cache[index]) return cache[index];
+//   else {
+//     if (index < 3) return 1;
+//     else {
+//       cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache)
+//     }
+//   }
 
-  return cache[index]
-}
+//   return cache[index]
+// }
 
-console.log(fibMemo(15))
+// console.log(fibMemo(15))
 
 //////////////////////////////////////////////////////////////////
 // Fibonacci
