@@ -8,22 +8,22 @@
 // contains all of the letters of the string in the second element 
 // of the array.
 
-function mutation(arr) {
-    // split arr into two arrays
-    var arr1 = arr[0].toLowerCase();
-    var arr2 = arr[1].toLowerCase();
+// function mutation(arr) {
+//     // split arr into two arrays
+//     var arr1 = arr[0].toLowerCase();
+//     var arr2 = arr[1].toLowerCase();
   
   
-    // for loop letters in second array
-    for (var i = 0; i < arr2.length; i++) {
-      // check to see if letter is inside array one
-      if (arr1.indexOf(arr2[i]) < 0)
-        return false;
-    }
-    return true;
-   }
+//     // for loop letters in second array
+//     for (var i = 0; i < arr2.length; i++) {
+//       // check to see if letter is inside array one
+//       if (arr1.indexOf(arr2[i]) < 0)
+//         return false;
+//     }
+//     return true;
+//    }
   
-  mutation(["hello", "hey"]);
+//   mutation(["hello", "hey"]);
 
 //////////////////////////////////////////////////////////////////
 // Sum of Two
